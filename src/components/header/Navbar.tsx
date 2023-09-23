@@ -4,13 +4,13 @@ import { cn } from "@/utils/mergeclass";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useState, useCallback } from "react";
 import Logo from "./Logo";
 
-interface MenuItems {
+type MenuItems = {
   [key: string]: string;
-}
+};
 
 const menuItems: MenuItems[] = [
   { item: "Home", link: "/" },
@@ -29,7 +29,7 @@ export default function Navbar() {
     <>
       <header
         className={cn(
-          `flex shadow-primary items-center justify-between md:px-4 lg:px-8 fixed w-full z-[1] bg-[#2D5F2E] text-white border-b border-[#0bed12]`
+          `flex shadow-primary items-center justify-between md:px-4 lg:px-8 fixed w-full z-[97] bg-[#2D5F2E] text-white border-b border-[#0bed12]`
         )}
       >
         {/* Logo to show on Desktop view */}
@@ -41,7 +41,7 @@ export default function Navbar() {
         <div
           className={cn(
             `
-      absolute z-[4] md:pt-0 drop-shadow-2xl shadow-primary border-b border-[#0bed12] flex items-center justify-between md:hidden w-[70%] transform transition duration-300 bg-[#2D5F2E]`,
+      absolute z-[100] md:pt-0 drop-shadow-2xl shadow-primary border-b border-[#0bed12] flex items-center justify-between md:hidden w-[70%] transform transition duration-300 bg-[#2D5F2E]`,
             {
               "-translate-x-full": !isMenuOpen,
               "translate-x-0": isMenuOpen,
@@ -65,7 +65,7 @@ export default function Navbar() {
         <div
           onClick={() => handleMenu(false)}
           className={cn(
-            `absolute z-[2] bg-[#2D5F2E]/50 inset-0 transition min-h-screen duration-300 md:hidden`,
+            `absolute z-[98] bg-[#2D5F2E]/50 inset-0 transition min-h-screen duration-300 md:hidden`,
             {
               "translate-x-0": isMenuOpen,
               "-translate-x-full": !isMenuOpen,
@@ -76,7 +76,7 @@ export default function Navbar() {
         {/* Nav Links */}
         <nav
           className={cn(
-            `flex flex-col pt-10 md:pt-0 absolute top-[3.6rem] md:top-0 bottom-0 min-h-screen md:min-h-fit md:bg-transparent z-[3] w-[70%] md:w-fit transform md:translate-x-0 transition duration-300 md:relative md:flex-row md:flex md:space-x-4 bg-[#2D5F2E]`,
+            `flex flex-col pt-10 md:pt-0 absolute top-[3.6rem] md:top-0 bottom-0 min-h-screen md:min-h-fit md:bg-transparent z-[99] w-[70%] md:w-fit transform md:translate-x-0 transition duration-300 md:relative md:flex-row md:flex md:space-x-4 bg-[#2D5F2E]`,
             {
               "translate-x-0": isMenuOpen,
               "-translate-x-full": !isMenuOpen,

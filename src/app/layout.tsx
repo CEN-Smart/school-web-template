@@ -1,14 +1,13 @@
-import { ChakraProviders } from "@/providers/chakraproviders";
-import "./globals.css";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import Navbar from "@/components/header/Navbar";
+import './globals.css';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import Navbar from '@/components/header/Navbar';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Home | Welcome",
-  description: "Your Number one choice of school in Nigeria",
+  title: 'Home | Welcome',
+  description: 'Your Number one choice of school in Nigeria',
 };
 
 type RootLayoutProps = {
@@ -17,12 +16,10 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={`antialiased ${inter.className}`}>
-        <ChakraProviders>
-          <Navbar />
-          {children}
-        </ChakraProviders>
+        <Navbar />
+        {children}
       </body>
     </html>
   );
